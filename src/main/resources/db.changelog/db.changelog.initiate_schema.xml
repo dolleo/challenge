@@ -1,0 +1,70 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    
+    <changeSet id="01" author="ldl">
+        <createTable tableName="city">
+            <column name="guid" type="varchar(50)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="is_active" type="boolean">
+                <constraints nullable="false"/>
+            </column>
+            <column name="address" type="varchar(80)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="latitude" type="number">
+                <constraints nullable="false"/>
+            </column>
+            <column name="longitude" type="number">
+                <constraints nullable="false"/>
+            </column>
+            <column name="tag0" type="varchar(25)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="tag1" type="varchar(25)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="tag2" type="varchar(25)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="tag3" type="varchar(25)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="tag4" type="varchar(25)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="tag5" type="varchar(25)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="tag6" type="varchar(25)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="02" author="ldl">
+        <createTable tableName="area_result">
+            <column name="id" type="varchar(40)">
+                <constraints primaryKey="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="03" author="ldl">
+        <createTable tableName="area_result_cities">
+            <column name="area_result_id" type="varchar(40)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="city_guid" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
